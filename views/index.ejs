@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+      <style>
+       body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.cube {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    transform: rotateX(0) rotateY(0);
+    animation: rotate 10s infinite linear;
+}
+
+.face {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-size: cover; /* Cover the entire face */
+    background-position: center; /* Center the image */
+    border: 1px solid #ddd;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+}
+
+.front  { 
+    transform: translateZ(100px); 
+    background-image: url('https://images.saymedia-content.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:eco%2Cw_1200/MTc0NDYwNzcyNjk5ODA5MTI4/top-10-cards-you-need-for-your-dark-magician-deck.jpg');
+}
+.back   { 
+    transform: rotateY(180deg) translateZ(100px); 
+    background-image: url('https://images.saymedia-content.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:eco%2Cw_1200/MTc0NDYwNzcyNjk5ODA5MTI4/top-10-cards-you-need-for-your-dark-magician-deck.jpg');
+}
+.left   { 
+    transform: rotateY(-90deg) translateZ(100px); 
+    background-image: url('https://images.saymedia-content.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:eco%2Cw_1200/MTc0NDYwNzcyNjk5ODA5MTI4/top-10-cards-you-need-for-your-dark-magician-deck.jpg');
+}
+.right  { 
+    transform: rotateY(90deg) translateZ(100px); 
+    background-image: url('https://images.saymedia-content.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:eco%2Cw_1200/MTc0NDYwNzcyNjk5ODA5MTI4/top-10-cards-you-need-for-your-dark-magician-deck.jpg');
+}
+.top    { 
+    transform: rotateX(90deg) translateZ(100px); 
+    background-color: rgba(255, 255, 255, 0.8);
+}
+.bottom { 
+    transform: rotateX(-90deg) translateZ(100px); 
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+@keyframes rotate {
+    from { transform: rotateX(0) rotateY(0); }
+    to   { transform: rotateX(0deg) rotateY(200deg); }
+}
+
+
+      </style>
+</head>
+<body style="background-color: rgb(77, 76, 76);">
+  <nav>
+    <%- include("partials/navbar.ejs") %>
+  
+  <div class="container mt-4">
+    <div class="mt-4 p-5 bg-primary text-white rounded">
+      <h1>My Login Project</h1>
+      <p>This project demonstrates how to implement login and register functionalities with Node.js and MySQL </p>
+    </div>
+  </div>
+
+   <div class="cube">
+        <div class="face front">Front</div>
+        <div class="face back">Back</div>
+        <div class="face left">Left</div>
+        <div class="face right">Right</div>
+        <div class="face top">Top</div>
+        <div class="face bottom">Bottom</div>
+    </div>
+
+
+</body>
+</html>
